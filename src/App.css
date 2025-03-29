@@ -1,0 +1,53 @@
+body{
+    margin: 20px;
+}
+.nav-bar{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px black;
+}
+
+.logo-img{
+    width: 180px;
+    height: 100px;
+}
+
+.nav-items > ul{
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-items >ul > li{
+    padding:20px;
+}
+
+/* .footer{
+    margin: 20px;
+    border: solid 1px black;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    width:100%;
+} */
+
+.restaurant-card{
+    border: solid 1px black;
+    margin: 20px;
+    padding: 20px;
+    width:250px;
+}
+
+.rest-image{
+    width:250px;
+    
+}
+
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cusine-names{
+   text-wrap:balance; 
+}
