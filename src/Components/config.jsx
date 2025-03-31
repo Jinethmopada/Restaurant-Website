@@ -1,4 +1,4 @@
-const cardList = [
+export const cardList = [
     {
         "info": {
           "id": "807823",
@@ -1234,4 +1234,4 @@ const cardList = [
       }
     ]
 
-    export default cardList
+export const CommonImageUrl = "https://media-assets.swiggy.com/";
