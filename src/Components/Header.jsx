@@ -1,6 +1,9 @@
 import React from "react";
+import { useState } from "react";
 
 const Header = ()=>{
+const [loggedInUser, setLoggedInUser] = useState(false);
+
     return (
       <>
         <div className="nav-bar">
@@ -13,7 +16,9 @@ const Header = ()=>{
           <li>About Us</li>
           <li>Contact Us</li>
           <li>Cart</li>
-          <li>Login</li>
+          {
+            loggedInUser ? <button onClick={()=> setLoggedInUser(false)}>Logout</button> : <button onClick={()=> setLoggedInUser(true)}>Login</button>
+          }
         </ul>
         </div>
         </div>

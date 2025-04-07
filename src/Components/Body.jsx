@@ -9,6 +9,7 @@ const Body = ()=>{
     const [searchTxt,setSearchTxt] = useState('');
     const [filteredRestList, setFilteredRestList] = useState([]);
     const [allRestoList, setAllRestoList] = useState([]);
+    const [noResultFound, setNoResultFound] = useState(false);
 
     useEffect(()=>{
         getRestaurantData();
@@ -38,12 +39,14 @@ const Body = ()=>{
             onClick={()=> {
                 const data = allRestoList.filter((item)=> item?.info?.name?.toLowerCase().includes(searchTxt.toLowerCase()));
                 setFilteredRestList(data);
+                setNoResultFound(data.length===0);
                 }
             }
             >Search</button>
         </div>
-
+        
         <div className="cards-container"> 
+        {noResultFound && <h1>No Results Found !!!</h1>}
         {filteredRestList.map((eachItem) => {
             return <Card {...eachItem.info} key={eachItem.info.id}/> 
         })}
