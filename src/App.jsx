@@ -7,6 +7,7 @@ import About from "./Components/About";
 import Error from "./Components/Error";
 import Contact from "./Components/Contact";
 import RestaurantDetails from "./Components/RestaurantDetails";
+import {RestaurantDetailsError} from './Components/Error';
 
 function App(){
   return (
@@ -37,7 +38,8 @@ export const appRouter = createBrowserRouter([
       },
       {
         path:'/restaurant/:resId',
-        element:<RestaurantDetails/>
+        element:<RestaurantDetails/>,
+        errorElement:<RestaurantDetailsError/>
       }
     ]
   }

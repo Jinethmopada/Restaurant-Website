@@ -14,3 +14,11 @@ const Error = () => {
 }
 
 export default Error
+
+export const RestaurantDetailsError = () => {
+    return(
+        <>
+            <h1>We are sorry the Menu items for this Restaurant are closed!! Please Come again after some time......</h1>
+        </>
+    )
+}

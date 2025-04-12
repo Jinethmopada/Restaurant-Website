@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router";
 import { CommonImageUrl } from "./config";
+import Shimmer from "./Shimmer";
 
 const RestaurantDetails = () => {
 
@@ -24,7 +25,7 @@ const RestaurantDetails = () => {
 
     // console.log(restoMenuList)
     
-    return(
+    return( (restoMenuList.length===0) ? <Shimmer/> : 
         <>
        <div className="resto-menu-items">
        <div className="resto-details">
