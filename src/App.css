@@ -89,3 +89,20 @@ body{
     width: auto;
 }
 
+.shimmer-card{
+    width: 250px;
+    height: 250px;
+    background: lightgray;
+    margin: 20px;
+}
+
+.resto-details{
+    border: solid 1px black;
+    margin: 20px;
+    padding: 20px;
+    width:250px;   
+}
+
+.resto-menu-items{
+    display: flex;
+}

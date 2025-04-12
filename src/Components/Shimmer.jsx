@@ -1,6 +1,10 @@
-const Shimmer = () => {
+const Shimmer = ({listLength}) => {
     return(
-        <h1>Shimmer UI is Loading..........</h1>
+        <>
+            <div className="cards-container">
+            {Array(10).fill("").map((item,index) => <div className="shimmer-card" key={index}></div>)}
+            </div>
+        </>
     )
 }
 
