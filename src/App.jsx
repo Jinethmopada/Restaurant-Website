@@ -8,6 +8,7 @@ import Error from "./Components/Error";
 import Contact from "./Components/Contact";
 import RestaurantDetails from "./Components/RestaurantDetails";
 import {RestaurantDetailsError} from './Components/Error';
+import Profile from "./Components/Profile";
 
 function App(){
   return (
@@ -30,7 +31,13 @@ export const appRouter = createBrowserRouter([
       },
       {
         path:'/about',
-        element:<About/>
+        element:<About/>,
+        children:[
+          {
+            path:'profile',
+            element:<Profile/>
+          }
+        ]
       },
       {
         path:'/contact',
