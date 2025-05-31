@@ -3,6 +3,7 @@ import Card from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from 'react-router';
+import SliderImages from "./SliderImages";
  
 const Body = ()=>{
 
@@ -10,6 +11,7 @@ const Body = ()=>{
     const [filteredRestList, setFilteredRestList] = useState([]);
     const [allRestoList, setAllRestoList] = useState([]);
     const [noResultFound, setNoResultFound] = useState(false);
+    const [sliderImagesList, setSliderImagesList] = useState([]);
 
     useEffect(()=>{
         getRestaurantData();
@@ -22,6 +24,7 @@ const Body = ()=>{
         console.log(json?.data);
         setAllRestoList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setSliderImagesList(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);  
     }
     
     
@@ -48,6 +51,11 @@ const Body = ()=>{
             >Search</button>
         </div>
         
+         <div className='slider-container'>
+            {sliderImagesList.map((item) => {
+               return <SliderImages {...item} key={item.id}/>
+            })}
+        </div>
         <div className="cards-container"> 
         {noResultFound && <h1>No Results Found !!!</h1>}
         {filteredRestList.map((eachItem) => {

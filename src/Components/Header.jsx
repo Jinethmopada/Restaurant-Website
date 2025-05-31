@@ -13,9 +13,9 @@ const [loggedInUser, setLoggedInUser] = useState(false);
         </a>
         <div className="nav-items">
         <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/about'>About Us</Link></li>
-          <li><Link to='/contact'>Contact Us</Link></li>
+          <li><Link className="link-item" to='/'>Home</Link></li>
+          <li><Link className="link-item" to='/about'>About Us</Link></li>
+          <li><Link className="link-item" to='/contact'>Contact Us</Link></li>
           <li>Cart</li>
           {
             loggedInUser ? <button onClick={()=> setLoggedInUser(false)}>Logout</button> : <button onClick={()=> setLoggedInUser(true)}>Login</button>
